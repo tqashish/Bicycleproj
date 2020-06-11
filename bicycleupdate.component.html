@@ -1,0 +1,79 @@
+
+    
+    
+  <div class="container"> 
+    <h2>Update Form</h2> 
+<form #frm="ngForm">
+ <div class="form-group">
+   <label>Model No</label>
+       <input type= "number" class="form-control" #no="ngModel" [(ngModel)]="list.modelno"
+        name="modelno"
+        required    >
+    
+     <div class="alert alert-danger" *ngIf="no.invalid && no.touched">
+         <div *ngIf="no.errors.required">Model No is Required</div>
+           
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label>Bicycle Name</label>
+          <input type= "text" class="form-control" #nm="ngModel" [(ngModel)]="list.bicycleName" name="bicycleName" required
+           minlength="2" maxlength="15">
+        <div class="alert alert-danger" *ngIf="nm.invalid && nm.touched">
+            <div *ngIf="nm.errors.required">Name is Required</div>
+            <div *ngIf="nm.errors.minlength">Name should be minimum of 2 letters</div>
+       </div>
+       </div>
+
+
+<div class="form-group">
+  <label>Bicycle Price</label>
+       <input type= "text" class="form-control" #price="ngModel" [(ngModel)]="list.price" name="price"
+          >
+        <div class="alert alert-danger" *ngIf="price.invalid && price.touched">
+           <div *ngIf="price.errors.required">Password is Required</div>
+           
+       </div>
+     </div> 
+
+     <div class="form-group">
+      <label>Bicycle Colors</label>
+           <input type= "text" class="form-control" #col="ngModel" [(ngModel)]="list.colors" name="colors"
+             >
+            <div class="alert alert-danger" *ngIf="col.invalid && col.touched">
+               <div *ngIf="col.errors.required">Colors are Required</div>
+               
+           </div>
+         </div> 
+    
+
+         <div class="form-group">
+            <label>Bicycle Weight</label>
+                 <input type= "text" class="form-control" #we="ngModel" [(ngModel)]="list.weight" name="weight"
+                   >
+                  <div class="alert alert-danger" *ngIf="we.invalid && we.touched">
+                     <div *ngIf="we.errors.required">Weight is Required</div>
+                     
+                 </div>
+               </div> 
+
+               <div class="form-group">
+                <label>About Information</label>
+                     <input type= "text" class="form-control" #info="ngModel" [(ngModel)]="list.information" name="information"
+                       >
+                      <div class="alert alert-danger" *ngIf="info.invalid && info.touched">
+                         <div *ngIf="info.errors.required">Information is Required</div>
+                         
+                     </div>
+                   </div> 
+
+
+                  
+
+         <button type="submit" class="btn btn-primary" (click)="addbicycle()" value="Submit"  [disabled]="frm.invalid">Update</button>
+
+    </form>
+  </div>
+
+

@@ -1,0 +1,28 @@
+<table border="2" style="font-style: normal;font-size: medium;">
+    <tr>
+       
+          
+    <th>Model No</th>
+    <th>Bicycle Name</th>
+    <th>Price</th>
+    <th>Colors</th>
+    <th>Weight</th>
+    <th>Information</th>
+    <th> Image</th>
+    <th>Action</th>
+    </tr>
+    
+    <tr *ngFor='let e of cycle; let i=index'>
+               
+    <td> {{e.modelno}}</td>
+    <td> {{e.bicycleName}}</td>
+    <td> {{e.price| currency:'INR':true}}</td>
+    <td> {{e.colors}}</td>
+    <td> {{e.weight}}</td>
+    <td> {{e.information}}</td>
+    <td> <img [src]="e.image"> </td>
+    <td><button class="btn btn-dark"><a [routerLink]="['/updt',i]">Edit</a></button>
+        <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+     </td>
+    </tr>
+    </table>

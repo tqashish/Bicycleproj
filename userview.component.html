@@ -1,0 +1,43 @@
+
+<div class="container">
+    <h1 class="text-center">BICYCLES</h1>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Model No</th>
+        <th>Bicycle Name</th>
+        <th>Price</th>
+        <th>Colors</th>
+        <th>Weight</th>
+        <th>Information about bicycle</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+
+    <ng-container *ngFor='let r of bicycle;let i=index'>
+        <tr>
+        <td>{{r.modelno}}</td>
+
+        <td>{{r.bicycleName}}</td>
+
+        <td>{{r.price}}</td>
+
+        <td>{{r.colors}}</td>
+
+        <td>{{r.weight}}</td>
+
+        <td>{{r.information}}</td>
+        
+        <td> <img [src]=r.image height="150px" width="250px"></td>
+
+        <td>
+        <button class="#F5DEB3" (click)="cart(i)"> Add to Cart</button>
+
+        </td>
+    </tr>
+    </ng-container>
+    </table>
+</div>
+
+
